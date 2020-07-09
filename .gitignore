@@ -226,3 +226,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+xdu-icpc-beamer-theme-*
+*.sty
+*.ins
+*.pdf
