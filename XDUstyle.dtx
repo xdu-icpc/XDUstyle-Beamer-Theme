@@ -30,7 +30,8 @@
 
 This is a generated file.
 
-Copyright (C) 2015--\the\year by Stick Cui <Stick_Cui@163.com>
+Copyright (C) 2015--2020 by Stick Cui <Stick_Cui@163.com>
+Copyright (C) 2020--\the\year by Xi Ruoyao <xry111@mengyan1223.wang>
 
 This file may be distributed and/or modified under the
 conditions of the LaTeX Project Public License, either version 1.3c
@@ -180,7 +181,7 @@ This package consists of the file  XDUstyle.dtx,
 % 
 % \fi
 %
-% \CheckSum{610}
+% \CheckSum{648}
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -616,6 +617,24 @@ This package consists of the file  XDUstyle.dtx,
       \fi%
 
       {\usebeamerfont{title}\usebeamercolor[fg]{title}{\insertpart}}
+    \end{minipage}
+  }
+  \defbeamertemplate*{section page}{sidebar theme}{%
+     \ifx\beamer@sidebar\undefined%
+      \setlength{\beamer@plainpagewidth}{\textwidth}
+    \else%
+      \setlength{\beamer@plainpagewidth}{\textwidth+\beamer@leftsidebar}%
+      \hskip-\beamer@leftsidebar%
+    \fi%
+    \begin{minipage}[c][\textheight][c]{\beamer@plainpagewidth}
+      \centering
+	  \ifx\beamer@english\undefined%
+		{\usebeamerfont{title}\usebeamercolor[fg]{author}{第 \arabic{section} 节}}\vspace*{\baselineskip}
+	  \else%
+        {\usebeamerfont{title}\usebeamercolor[fg]{author}{Section \arabic{section}}}\vspace*{\baselineskip}
+      \fi%
+
+      {\usebeamerfont{title}\usebeamercolor[fg]{title}{\insertsection}}
     \end{minipage}
   }
 %    \end{macrocode}
